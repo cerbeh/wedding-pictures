@@ -17,12 +17,12 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/api/pictures', (req, res) => {
+app.get('/api/pictures/*', (req, res) => {
   cloudinary.search
     .expression('folder:Wedding')
     .sort_by('public_id','desc')
-    .next_cursor(req.body.next_cursor)
-    .max_results(30)
+    .next_cursor(req.params[0])
+    .max_results(12)
     .execute()
 
     .then(result => res.json(result))
