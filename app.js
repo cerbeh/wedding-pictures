@@ -26,7 +26,7 @@ app.get('/api/pictures', (req, res) => {
     .execute()
 
     .then(result => res.json(result))
-    .catch(e => console.error('Error getting resource from cloudinary ::', e));
+    .catch(e => console.error('Error getting resource from cloudinary :: ', e));
 });
 
-app.listen(PORT, () => console.log(`Server up and running on port: ${PORT}`));
+app.listen(PORT, () => console.log(`Server up and running on port: ${PORT} @ ${new Date()}`));
