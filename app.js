@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/api/pictures/*', (req, res) => {
+app.get('/api/pictures*', (req, res) => {
   cloudinary.search
     .expression('folder:Wedding')
     .sort_by('public_id','desc')
