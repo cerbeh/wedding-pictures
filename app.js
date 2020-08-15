@@ -21,7 +21,7 @@ app.get('/api/pictures*', (req, res) => {
   cloudinary.search
     .expression('folder:Wedding')
     .sort_by('public_id','desc')
-    .next_cursor(req.params[0])
+    .next_cursor(req.params[0].replace('/', ''))
     .max_results(12)
     .execute()
 
