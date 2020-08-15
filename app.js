@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = process.env.port || 3030;
+const PORT = process.env.PORT || 3030;
 
 const cloudinary = require('cloudinary').v2;
 
